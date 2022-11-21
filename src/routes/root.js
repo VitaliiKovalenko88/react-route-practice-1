@@ -36,14 +36,18 @@ export default function Root() {
           </form>
         </div>
         <nav>
-          <ul>
-            <li>
-              <Link to={`contacts/1`}>Your Name</Link>
-            </li>
-            <li>
-              <Link to={`contacts/2`}>Your Friend</Link >
-            </li>
-          </ul>
+          {contacts.length ? (
+            <ul>{contacts.map(({ id, first, last, favorite }) => {
+              return (
+                <li key={id}>
+                  <Link to={`contacts/${id}`}>{first || last ? (<>
+                    {first} {last} </>) : (<i>No Name</i>)}{" "} {favorite && <span>★</span>}</Link>
+                </li>
+              )
+            })}
+          </ul>) : (<p>
+            <i>No Contacts</i></p>
+          )}
         </nav>
       </div>
       <div id="detail">

@@ -1,8 +1,16 @@
 /* eslint-disable no-restricted-globals */
-import { Form } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
+import { getContact } from "contacts";
+
+export async function loader({ params }) {
+  return getContact(params.contactId);
+}
 
 export default function Contact() {
-  const contact = {
+
+  const {contact} = useLoaderData();
+
+  const contacts = {
     first: "Your",
     last: "Name",
     avatar: "https://placekitten.com/g/200/200",
@@ -15,36 +23,36 @@ export default function Contact() {
     <div id="contact">
       <div>
         <img
-          key={contact.avatar}
-          src={contact.avatar || null}
+          key={contacts.avatar}
+          src={contacts.avatar || null}
           alt=""
         />
       </div>
 
       <div>
         <h1>
-          {contact.first || contact.last ? (
+          {contacts.first || contacts.last ? (
             <>
-              {contact.first} {contact.last}
+              {contacts.first} {contacts.last}
             </>
           ) : (
             <i>No Name</i>
           )}{" "}
-          <Favorite contact={contact} />
+          <Favorite contact={contacts} />
         </h1>
 
-        {contact.twitter && (
+        {contacts.twitter && (
           <p>
             <a
               target="blank"
-              href={`https://twitter.com/${contact.twitter}`}
+              href={`https://twitter.com/${contacts.twitter}`}
             >
-              {contact.twitter}
+              {contacts.twitter}
             </a>
           </p>
         )}
 
-        {contact.notes && <p>{contact.notes}</p>}
+        {contacts.notes && <p>{contacts.notes}</p>}
 
         <div>
           <Form action="edit">

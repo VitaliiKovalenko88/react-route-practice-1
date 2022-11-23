@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-import { Form  } from "react-router-dom";
+import { Form, useLoaderData  } from "react-router-dom";
 import { getContact } from "contacts";
 
 export async function loader({ params }) {
@@ -8,8 +8,8 @@ export async function loader({ params }) {
 
 export default function Contact() {
 
-  
-  
+  const contact = useLoaderData();
+  console.log(contact);
   const contacts = {
     first: "Your",
     last: "Name",

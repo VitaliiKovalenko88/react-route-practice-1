@@ -9,7 +9,7 @@ export async function loader({ params }) {
 export default function Contact() {
 
   const contact = useLoaderData();
-  console.log(contact);
+
   const contacts = {
     first: "Your",
     last: "Name",

@@ -12,6 +12,7 @@ export async function action() {
 
 export default function Root() {
   const { contacts } = useLoaderData();
+  console.log(contacts)
   return (
     <>
       <div id="sidebar">
@@ -41,11 +42,22 @@ export default function Root() {
         </div>
         <nav>
           {contacts.length ? (
-            <ul>{contacts.map(({ id, first, last, favorite }) => {
+            <ul>
+              {contacts.map(({ id, first, last, favorite }) => {
               return (
                 <li key={id}>
-                  <Link to={`contacts/${id}`}>{first || last ? (<>
-                    {first} {last} </>) : (<i>No Name</i>)}{" "} {favorite && <span>★</span>}</Link>
+                  <Link to={`contacts/${id}`}>{
+                    first || last
+                    ?
+                    (<>
+                        {first} {last}
+                      </>
+                    )
+                    :
+                    (<i>No Name</i>)
+                  }
+                    {" "} {favorite && <span>★</span>}
+                  </Link>
                 </li>
               )
             })}

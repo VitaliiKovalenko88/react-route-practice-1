@@ -1,4 +1,4 @@
-import { Outlet, Link, useLoaderData, Form, redirect } from "react-router-dom";
+import { Outlet, useLoaderData, Form, redirect, NavLink } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
 
 export async function loader() {
@@ -47,7 +47,11 @@ export default function Root() {
               {contacts.map(({ id, first, last, favorite }) => {
               return (
                 <li key={id}>
-                  <Link to={`contacts/${id}`}>{
+                  <NavLink to={`contacts/${id}`} className={({ isActive, isPending }) => isActive
+                    ? "active"
+                    : isPending
+                      ? "pending"
+                      : ""} >{
                     first || last
                     ?
                     (<>
@@ -58,7 +62,7 @@ export default function Root() {
                     (<i>No Name</i>)
                   }
                     {" "} {favorite && <span>★</span>}
-                  </Link>
+                  </NavLink>
                 </li>
               )
             })}

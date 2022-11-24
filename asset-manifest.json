@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-router-practice/static/css/main.fe200add.css",
+    "main.js": "/react-router-practice/static/js/main.9791a328.js",
+    "index.html": "/react-router-practice/index.html",
+    "main.fe200add.css.map": "/react-router-practice/static/css/main.fe200add.css.map",
+    "main.9791a328.js.map": "/react-router-practice/static/js/main.9791a328.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe200add.css",
+    "static/js/main.9791a328.js"
+  ]
+}

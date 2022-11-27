@@ -15,7 +15,7 @@ import { action as destroyAction } from "./routes/destroy";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/react-router-practice",
     element: <Root />,
     errorElement: <ErrorPage />,
     loader: rootLoader, 

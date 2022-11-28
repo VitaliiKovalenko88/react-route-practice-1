@@ -14,7 +14,6 @@ export async function action() {
 export default function Root() {
   const { contacts } = useLoaderData();
   const navigation = useNavigation();
-  console.log(navigation)
   
   return (
     <>

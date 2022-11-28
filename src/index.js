@@ -16,7 +16,7 @@ import Index from 'routes';
 
 const router = createBrowserRouter([
   {
-    path: "/react-router-practice",
+    path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     loader: rootLoader, 

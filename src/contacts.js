@@ -23,7 +23,7 @@ export async function createContact() {
 }
 
 export async function getContact(id) {
-  await fakeNetwork(`contact:${id}`);
+  await fakeNetwork(`react-router-practice/contact:${id}`);
   let contacts = await localforage.getItem("contacts");
   let contact = contacts.find(contact => contact.id === id);
   return contact ?? null;

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
+  // Route
 } from "react-router-dom";
 
 import Root, { loader as rootLoader, action as rootAction,} from 'routes/root';

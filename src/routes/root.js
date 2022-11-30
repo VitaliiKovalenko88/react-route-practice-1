@@ -41,7 +41,7 @@ export default function Root() {
               defaultValue={q}
               onChange={(e) => {
                 submit(e.currentTarget.form)
-              }}
+              }
             />
             <div
               id="search-spinner"
